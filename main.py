@@ -1,5 +1,7 @@
 import datetime as datetime 
 
+# Variaveis:
+
 tarefas= []
 data_criacao = datetime.date
 tipos_status = ["emaberto", "emprogresso", "finalizado"]
@@ -34,6 +36,8 @@ def criar_task():
                  print("Status inválido! tente novamente.")
         task = tarefa(titulo, status)
         tarefas.append(task)
+
+criar_task()
 
 criar_task()
 
