@@ -4,7 +4,7 @@ import datetime as datetime
 
 tarefas= []
 data_criacao = datetime.date
-tipos_status = ["emaberto", "emprogresso", "finalizado"]
+tipos_status = ["em aberto", "em progresso", "finalizado","emaberto","emprogresso"]
 
 class tarefa:
 
@@ -29,7 +29,7 @@ def criar_task():
                 1. Em Aberto
                 2. Em Progresso
                 3. Finalizado''')
-            status = input(str("\nDigite em qual status está sua tarefa:"))
+            status = input(str("\nDigite em qual status está sua tarefa:")).lower()
             if status in tipos_status:
                  break
             else:
@@ -45,18 +45,22 @@ print('''
 ''')
 #Seria legal incluir a chance do usuário excluir alguma task  
 
-opcao= input(str("Digite a opção que deseja fazer:"))
 
-if opcao=="1":
-    criar_task()
-    print("task criada com sucesso!")
 
-if opcao == "2":
-    for t in tarefas:
-        t.mostrar_tarefa()
-     
-if opcao == "3":
-    print("Saindo...")
+while True:
+    opcao= input(str("Digite a opção que deseja fazer:"))
 
-else:
-     print("Opção invalida! Tente novamente.")
+    if opcao=="1":
+        criar_task()
+        print("task criada com sucesso!")
+
+    if opcao == "2":
+        for t in tarefas:
+            t.mostrar_tarefa()
+        
+    if opcao == "3":
+        print("Saindo...")
+        break
+
+    else:
+        print("Opção invalida! Tente novamente.")
