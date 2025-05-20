@@ -37,9 +37,26 @@ def criar_task():
         task = tarefa(titulo, status)
         tarefas.append(task)
 
-criar_task()
+print('''
+    Ações disponíveis:
+      1. Criar uma task.
+      2. Visualizar as tasks
+      3. Sair
+''')
+#Seria legal incluir a chance do usuário excluir alguma task  
 
-criar_task()
+opcao= input(str("Digite a opção que deseja fazer:"))
 
-for t in tarefas:
-     t.mostrar_tarefa()
+if opcao=="1":
+    criar_task()
+    print("task criada com sucesso!")
+
+if opcao == "2":
+    for t in tarefas:
+        t.mostrar_tarefa()
+     
+if opcao == "3":
+    print("Saindo...")
+
+else:
+     print("Opção invalida! Tente novamente.")
